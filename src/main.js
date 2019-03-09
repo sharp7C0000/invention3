@@ -1,15 +1,7 @@
-const apple = "apple";
-const banana = "banana";
-const ornage = "orange";
+import Vue from "vue";
+import App from "./app.vue";
 
-const foo = false;
-
-let myFruit = (() => {
-   if(foo) {
-     return apple;
-   } else {
-     return banana;
-   }
-})();
-
-console.log("what is my fruit?", myFruit);
+const app = new Vue({
+  el    : "#app",
+  render: h => h(App)
+})

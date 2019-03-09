@@ -6,18 +6,21 @@ const server = Hapi.server({
     port: 8000
 });
 
-// Add the route
-server.route({
-  method :'GET',
-  path   :'/',
-  handler: function(request, h) {
-    return'hello world';
-  }
-});
-
 // Start the server
-const start =  async function() {
+const start = async function() {
   try {
+
+    await server.register(require('inert'));
+    
+    // Add the route
+    server.route({
+      method :'GET',
+      path   :'/',
+      handler: function (request, h) {
+        return h.file('./dist/index.html');
+      }
+    });
+
     await server.start();
   }
   catch (err) {
