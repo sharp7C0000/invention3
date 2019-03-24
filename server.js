@@ -11,6 +11,17 @@ const start = async function() {
   try {
 
     await server.register(require('inert'));
+
+    // Resources
+    server.route({
+      method: 'GET',
+      path: '/scripts/{param*}',
+      handler: {
+        directory: {
+          path: './dist'
+        }
+      }
+    });
     
     // Add the route
     server.route({
