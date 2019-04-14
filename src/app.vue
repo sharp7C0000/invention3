@@ -13,7 +13,7 @@
     font-weight     : bold;
 
     & .knife {
-      background-color: red;
+      background-color: blue;
       color: white;
     }
   }
@@ -24,7 +24,7 @@
   <div class="dish">
     {{dish}}
     <div class="knife">
-      foo
+      foo foo foo foo
     </div>
   </div>
 
